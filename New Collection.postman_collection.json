@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "6921a6a3-5f35-4289-8d31-b64f224572e3",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27392736"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"test4\",\r\n    \"email\": \"test4\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"email\": \"admin\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWVhMWE1NGUzN2QwOWIxMWQzZTYxZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MzkyNTU5MiwiZXhwIjoxNjg0MDExOTkyfQ.B_bCOuWYTvWzn94q6SbooGyTxSYkvGnNYzHXKnDhiJM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"title\": \"Test\",\r\n    \"desc\": \"Test\",\r\n    \"img\": \"Test\",\r\n    \"categories\": [\"tshirt, man\"],\r\n    \"size\": \"M\",\r\n    \"color\": \"gray\",\r\n    \"price\": 30,\r\n    \"inStock\": true\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWVhMWE1NGUzN2QwOWIxMWQzZTYxZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MzkyNTU5MiwiZXhwIjoxNjg0MDExOTkyfQ.B_bCOuWYTvWzn94q6SbooGyTxSYkvGnNYzHXKnDhiJM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"userId\":\"645f72ac6994f25614cb502a\",\r\n    \"products\":[\r\n        {\r\n            \"productId\":\"645eaa6b9eb0b2e72b90440e\",\r\n            \"quantity\":2\r\n        }\r\n    ],\r\n    \"amount\": 50,\r\n    \"address\": \"Pakistan, Karachi\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/orders/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWVhMWE1NGUzN2QwOWIxMWQzZTYxZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MzkyNTU5MiwiZXhwIjoxNjg0MDExOTkyfQ.B_bCOuWYTvWzn94q6SbooGyTxSYkvGnNYzHXKnDhiJM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"userId\": ,\r\n    \"products\": \"[{productId: {type: String,        },        quantity: {          type: Number,          default: 1, },},]\",\r\n  },",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/carts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"carts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWVhMWE1NGUzN2QwOWIxMWQzZTYxZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MzkyNTU5MiwiZXhwIjoxNjg0MDExOTkyfQ.B_bCOuWYTvWzn94q6SbooGyTxSYkvGnNYzHXKnDhiJM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"title\": \"Testtttttttttttttt\",\r\n    \"desc\": \"Test222\",\r\n    \"img\": \"Test222\",\r\n    \"categories\": [\"tshirt, man\"],\r\n    \"size\": \"S\",\r\n    \"color\": \"graydd\",\r\n    \"price\": 30,\r\n    \"inStock\": true\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/products/645eaa6b9eb0b2e72b90440e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products",
+						"645eaa6b9eb0b2e72b90440e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWVhMWE1NGUzN2QwOWIxMWQzZTYxZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MzkyNTU5MiwiZXhwIjoxNjg0MDExOTkyfQ.B_bCOuWYTvWzn94q6SbooGyTxSYkvGnNYzHXKnDhiJM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/products/645ebf62c231a762059ce911",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products",
+						"645ebf62c231a762059ce911"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWVhMWE1NGUzN2QwOWIxMWQzZTYxZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MzkyNTU5MiwiZXhwIjoxNjg0MDExOTkyfQ.B_bCOuWYTvWzn94q6SbooGyTxSYkvGnNYzHXKnDhiJM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"title\": \"Test\",\r\n    \"desc\": \"Test\",\r\n    \"img\": \"Test\",\r\n    \"categories\": [\"tshirt, man\"],\r\n    \"size\": \"M\",\r\n    \"color\": \"gray\",\r\n    \"price\": 30,\r\n    \"inStock\": true\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
